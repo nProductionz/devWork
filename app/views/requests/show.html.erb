@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @request.title %>
+</p>
+
+<p>
+  <strong>Requester:</strong>
+  <%= @request.requester_id %>
+</p>
+
+<p>
+  <strong>Genre:</strong>
+  <%= @request.genre %>
+</p>
+
+<p>
+  <strong>Tag1:</strong>
+  <%= @request.tag1 %>
+</p>
+
+<p>
+  <strong>Tag2:</strong>
+  <%= @request.tag2 %>
+</p>
+
+<p>
+  <strong>Tag3:</strong>
+  <%= @request.tag3 %>
+</p>
+
+<p>
+  <strong>Reference:</strong>
+  <%= @request.reference %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @request.description %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
