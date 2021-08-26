@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_26_084321) do
+ActiveRecord::Schema.define(version: 2021_08_26_100858) do
+
+  create_table "artists", force: :cascade do |t|
+    t.string "name"
+    t.integer "genre"
+    t.integer "tag1"
+    t.integer "tag2"
+    t.integer "tag3"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "requests", force: :cascade do |t|
     t.string "title"
