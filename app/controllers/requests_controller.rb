@@ -17,6 +17,7 @@ class RequestsController < ApplicationController
 
   # GET /requests/1/edit
   def edit
+    @request = Request.find(params[:id])
   end
 
   # POST /requests or /requests.json
