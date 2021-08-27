@@ -2,9 +2,9 @@ class ReviewsController < ApplicationController
   before_action :set_review, only: %i[ show edit update destroy ]
 
   # GET /reviews or /reviews.json
-  def index
-    @reviews = Review.all
-  end
+  # def index
+  #   @reviews = Review.all
+  # end
 
   # GET /reviews/1 or /reviews/1.json
   def show
@@ -17,6 +17,7 @@ class ReviewsController < ApplicationController
 
   # GET /reviews/1/edit
   def edit
+    @review = Artist.find(params[:request_id]).reviews.find(params[:id])
   end
 
   # POST /reviews or /reviews.json
@@ -36,15 +37,7 @@ class ReviewsController < ApplicationController
 
   # PATCH/PUT /reviews/1 or /reviews/1.json
   def update
-    respond_to do |format|
-      if @review.update(review_params)
-        format.html { redirect_to @review, notice: "Review was successfully updated." }
-        format.json { render :show, status: :ok, location: @review }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
-      end
-    end
+    @review = 
   end
 
   # DELETE /reviews/1 or /reviews/1.json
