@@ -4,3 +4,4 @@ create le risorse Artist, Request, Review
 creati i model, le strutture del database e le view
 settati i controller per Artist e Review
 inizializzato devise per User per garantire l'autenticazione
+create le views per user e user session con devise
