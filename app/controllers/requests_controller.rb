@@ -1,6 +1,7 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[ show edit update destroy ]
 
+  before_action :set_request, only: %i[ show edit update destroy ]
+  
   # GET /requests or /requests.json
   def index
     @requests = Request.all
