@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_27_091710) do
+ActiveRecord::Schema.define(version: 2021_09_11_100441) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
@@ -24,15 +24,16 @@ ActiveRecord::Schema.define(version: 2021_08_27_091710) do
 
   create_table "requests", force: :cascade do |t|
     t.string "title"
-    t.integer "requester_id"
-    t.integer "genre"
-    t.integer "tag1"
-    t.integer "tag2"
-    t.integer "tag3"
+    t.string "genre"
+    t.string "tag1"
+    t.string "tag2"
     t.string "reference"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_id", null: false
+    t.string "tag3"
+    t.index ["user_id"], name: "index_requests_on_user_id"
   end
 
   create_table "reviews", force: :cascade do |t|
@@ -51,8 +52,10 @@ ActiveRecord::Schema.define(version: 2021_08_27_091710) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "roles_mask"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "requests", "users"
 end

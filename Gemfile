@@ -28,6 +28,7 @@ gem 'jbuilder', '~> 2.7'
 
 #Autorizzazione
 gem 'devise'
+gem 'canard', '~> 0.6.2.pre'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false

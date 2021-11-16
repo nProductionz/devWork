@@ -17,28 +17,23 @@
   </div>
 
   <div class="field">
-    <%= form.label :requester_id %>
-    <%= form.number_field :requester_id %>
-  </div>
-
-  <div class="field">
     <%= form.label :genre %>
-    <%= form.number_field :genre %>
+    <%= form.select :genre, :collection => %w[Manga Western Paint Digital] %>
   </div>
 
   <div class="field">
     <%= form.label :tag1 %>
-    <%= form.number_field :tag1 %>
+    <%= form.select :tag1, :collection => %w[Digital Traditional Action Horror Romance Ecchi Fanart Seinen Yuri Yaoi] %>
   </div>
 
   <div class="field">
     <%= form.label :tag2 %>
-    <%= form.number_field :tag2 %>
+    <%= form.select :tag2, :collection => %w[Digital Traditional Action Horror Romance Ecchi Fanart Seinen Yuri Yaoi    ] %>
   </div>
 
   <div class="field">
     <%= form.label :tag3 %>
-    <%= form.number_field :tag3 %>
+    <%= form.select :tag3, :collection => %w[Digital Traditional Action Horror Romance Ecchi Fanart Seinen Yuri Yaoi    ] %>
   </div>
 
   <div class="field">
