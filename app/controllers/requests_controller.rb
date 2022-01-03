@@ -71,6 +71,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:title, :requester_id, :genre, :tag1, :tag2, :tag3, :reference, :description)
+      params.require(:request).permit(:title, :genre, :tag1, :tag2, :reference, :description)
     end
 end

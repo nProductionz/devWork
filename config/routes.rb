@@ -8,8 +8,8 @@ Rails.application.routes.draw do
   resources :requests
 
   resources :artists do
-    resources :reviews
-  end
+    resource :reviews, only: [:new, :create, :destroy]
+  end 
 
   resources :requesters
 
