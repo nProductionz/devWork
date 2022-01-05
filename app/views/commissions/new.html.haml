@@ -1,0 +1,8 @@
+%h2 Add a Commission 
+
+= form_tag request_commissions_path, :method => :post do
+    
+    = label :commission, :prize, "Prezzo"
+    = number :commission, :prize
+    <br/>
+    
