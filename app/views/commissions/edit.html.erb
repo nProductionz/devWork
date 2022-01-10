@@ -1,0 +1,9 @@
+<h2> Modifica una proposta </h2>
+
+<%= form_with model: [ @commission.artist, @commission ] do |form| %>
+    <p>
+        <%= form.label :details %><br>
+        <%= form.text_area :details %>
+    </p>
+
+<% end %>

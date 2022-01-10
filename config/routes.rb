@@ -15,9 +15,13 @@ Rails.application.routes.draw do
 
   resources :artists do
     resource :reviews, only: [:new, :create, :destroy]
-  end 
-
-  resources :requesters
+  end
   
   post '/logout' => 'sessions#destroy'
+
+  get 'adm', to: 'admins#index', :as => :admin_view
+  get 'adm/ban/:id', to: 'admins#unartist_user', :via => :get, :as => :admin_unartist_user
+  get 'adm/unban/:id', to: 'admins#makeartist_user', :via => :get, :as => :admin_makeartist_user
+  get 'adm/admin/:id', to: 'admins#admin_user', :via => :get, :as => :admin_admin_user
+  get 'adm/unadmin/:id', to: 'admins#unadmin_user', :via => :get, :as => :admin_unadmin_user
 end

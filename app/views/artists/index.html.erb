@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Artists</h1>
+<h1>Elenco Artisti</h1>
 
 <table>
   <thead>
@@ -19,7 +19,6 @@
         <td><%= artist.genre %></td>
         <td><%= artist.about %></td>
         <td><%= link_to 'Show', artist %></td>
-        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
         <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -27,5 +26,11 @@
 </table>
 
 <br>
-
-<%= link_to 'New Artist', new_artist_path %>
+<p>
+  <%= link_to 'Diventa un\'Artista', new_artist_path %>
+  <br>
+  <%= link_to 'Elenco Requests', requests_path %>
+  <br>
+</p>
+<p><br></p>
+<br>

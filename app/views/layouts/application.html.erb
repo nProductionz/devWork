@@ -24,6 +24,8 @@
     <b>Roles: </b>
     <% if current_user.is_artist? %>
       Artist
-      <% end %>
+    <% end %>
+    <% if current_user.is_admin? %>
+      <%= link_to "Admin", admin_view_path %>
     <% end %>
 </html>

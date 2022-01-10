@@ -1,14 +1,27 @@
 class RequestsController < ApplicationController
 
   before_action :set_request, only: %i[ show edit update destroy ]
-  
+  before_action :require_permission, only: :edit
+
+  def require_permission
+    if current_user != Request.find(params[:id]).user
+      flash.alert = "You are not allowed to edit the Request"
+     
+    end
+  end
+ 
   # GET /requests or /requests.json
   def index
-    @requests = Request.all
+    if params[:genre]
+      @requests = Request.where(:genre => params[:genre])
+    else
+      @requests = Request.all
+    end
   end
 
   # GET /requests/1 or /requests/1.json
   def show
+
   end
 
   # GET /requests/new
@@ -52,6 +65,8 @@ class RequestsController < ApplicationController
 
   # DELETE /requests/1 or /requests/1.json
   def destroy
+    authorize! :destroy, Request, :message => "Non sei autorizzato"
+
     @request.destroy
     respond_to do |format|
       format.html { redirect_to requests_url, notice: "Request was successfully destroyed." }

@@ -1,4 +1,4 @@
-<style>
+  <style>
    table, th, td {
      border: 1px solid black;
   }
@@ -6,8 +6,19 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Requests List</h1>
 
+<h1>Requests List</h1>
+<br>
+<div>
+  <h4> Cerca per Genere</h4>
+  <ul>
+      <li><%= link_to "Western", requests_path(:genre=>"Western") %></li>
+      <li><%= link_to "Manga", requests_path(:genre=>"Manga") %></li>
+      <li><%= link_to "Paint", requests_path(:genre=>"Paint") %></li>
+      <li><%= link_to "Digital", requests_path(:genre=>"Digital") %></li>
+    </ul>
+</div>
+<br>
 <table style="width:100%">
     <tr>
       <th>Title</th>
@@ -17,13 +28,18 @@
     </tr>
 
     <% @requests.each do |request| %>
+      
       <tr>
         <td><%= request.title %></td>
         <td><%= request.genre %></td>
         <td><table style="width:100%">
           <td><%= link_to 'Show', request %></td>
           <td><%= link_to 'Edit', edit_request_path(request) %></td>
-          <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><% if can? :destroy, Request %>
+            <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <%else%>
+            <td><s>Destroy</s></td>
+            <% end %></td>
           </table>
         </td>  
       </tr>
@@ -33,8 +49,11 @@
 <br>
 
 <br>
-<h2>Actions</h2>
-<%= link_to 'New Request', new_request_path %>
+<h2>Collabora con noi</h2>
+<%= link_to 'Aggiungi una Richiesta', new_request_path %>
 <br>
-
+<%= link_to 'Diventa un\'Artista', new_artist_path %>
+<br>
+<%= link_to 'Elenco Artisti', artists_path %>
+<br>
 <br><br>

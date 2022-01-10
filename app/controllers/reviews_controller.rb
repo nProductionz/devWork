@@ -5,7 +5,7 @@ class ReviewsController < ApplicationController
   def create
     id_artist = params[:artist_id]
     @artist = Artist.find(id_artist)
-    @review = @artist.reviews.create!(:comments => params[:review][:comments])
+    @review = @artist.reviews.create!(:vote =>params[:review][:vote], :comments => params[:review][:comments])
     redirect_to artists_path
   end
 

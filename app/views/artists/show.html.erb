@@ -14,7 +14,25 @@
   <strong>About:</strong>
   <%= @artist.about %>
 </p>
-
-<%= link_to 'Edit', edit_artist_path(@artist) %> 
-<%= link_to 'Aggiungi Recensione'. new_artist_reviews_path(@artist) %>
-<%= link_to 'Back', artists_path %>
+<p>
+<div><h3>Recensioni</h3></div>
+<div>
+  <% if @artist.reviews.empty? %>
+  <p>Questo artista non ha ancora ricevuto recensioni...</p>
+<% else %>
+  <p>
+    <% @artist.reviews.each do |r| %>
+      <strong><%= r.vote%>:</strong>
+      <%= r.comments %>
+      <br>
+    <% end %>
+  </p>
+<% end %>
+</div>
+</p>
+<br>
+<ul>
+  <li><%= link_to 'Edit', edit_artist_path(@artist) %></li>
+  <li><%= link_to 'Aggiungi Recensione', new_artist_reviews_path(@artist) %></li>
+  <li><%= link_to 'Back', artists_path %></li>
+</ul>

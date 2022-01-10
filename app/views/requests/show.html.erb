@@ -35,5 +35,57 @@
   <%= @request.description %>
 </p>
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
+<br>
+<p>
+<h3>Proposte di Commissione</h3>
+<% if @request.commissions.empty? %>
+  <p></p>
+<% else %>
+  <p>
+    <% @request.commissions.each do |r| %>
+      <strong><%= Artist.find(r.artist_id).name%>:</strong>
+      <%= r.prize%>€,  
+      <%= r.details %>
+      <br>
+    <% end %>
+  </p>
+<% end %>
+</p>
+
+
+
+<br><br><br>
+
+<h2> Aggiungi proposta di Commissione </h2>
+<%if can? :create, Commission %>
+    <%= form_with model: [ @request, @request.commissions.build ] do |form| %>
+      <p>
+        <strong><%= form.label :details, "Dettagli" %></strong><br>
+        <%= form.text_area :details %>
+      </p>
+
+      <p>
+        <strong><%= form.label :prize, "Prezzo" %></strong><br>
+        <%= form.number_field :prize, in: 10..100.0, step: 0.5 %>
+      </p>
+
+      <p>
+        <strong><%= form.label :artist %></strong><br>
+        <%= form.collection_select :artist, Artist.all, :id, :name %>
+      </p>
+      <p>
+        <%= form.submit "Aggiungi proposta" %>
+        </p>
+    <% end %>
+<%else%>
+  <u>Non sei un Artista, non puoi fare proposte per una commissione.</u>
+<% end %>
+
+<br><br>
+<%= link_to 'Edit', edit_request_path(@request) %>
 <%= link_to 'Back', requests_path %>
+<br>
+
+
+
+

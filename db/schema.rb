@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_05_173856) do
+ActiveRecord::Schema.define(version: 2022_01_07_185144) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2022_01_05_173856) do
     t.integer "tag3"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "about"
   end
 
   create_table "commissions", force: :cascade do |t|

@@ -1,0 +1,12 @@
+<h2>Add a Review for the artist</h2>
+
+<%= form_tag artist_reviews_path, :method => :post do %>
+  <%= label :review, :vote, 'Voto' %>
+  <%= select :review, :vote, [1,2,3,4,5,6,7,8,9,10] %>
+  <br/>
+  <%= label :review, :comments, 'Recensione' %>
+  <%= text_field :review, :comments %>
+  <br/><br/>
+  <%= submit_tag 'Aggiungi Recensione' %>
+  <br>
+<% end %>

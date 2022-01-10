@@ -1,0 +1,36 @@
+<style>
+table, th, td {
+  border: 1px solid blue;
+}
+</style>
+<table>
+  <tr>
+    <th> Email </th>
+    <th> Artist </th>
+    <th> Admin </th>
+
+    <th> Artist Button </th>
+    <th> Admin Button </th>
+
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.is_artist? %></td>
+      <td><%= user.is_admin? %></td>
+      <td><% if user.is_artist? %>
+        <%= link_to "Remove Artist", admin_unartist_user_path(user.id), method: :get, data: { confirm: " Sei sicuro? " } %>
+        <%else%>
+          <%= link_to "Remove Artist", admin_makeartist_user_path(user.id), method: :get, data: { confirm: " Sei sicuro? " } %>
+          <%end%>
+      </td>
+      <td>
+        <% if user.is_admin? %>
+          <%= link_to "Remove Admin", admin_unadmin_user_path(user.id), method: :get, data: { confirm: " Sei sicuro" } %>
+          <%else%>
+            <%= link_to "Make Admin", admin_admin_user_path(user.id), method: :get, data: { confirm: " Sei sicuro? " } %>
+          <%end%>
+      </td>
+    </tr>
+</table>

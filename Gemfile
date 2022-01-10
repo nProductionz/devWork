@@ -59,9 +59,11 @@ group :test do
   
 
   gem 'database_cleaner'
-  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails'
   gem 'rspec-rails'
 end
+
+gem 'wikipedia-client'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
