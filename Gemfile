@@ -29,6 +29,8 @@ gem 'jbuilder', '~> 2.7'
 #Autorizzazione
 gem 'devise'
 gem 'canard', '~> 0.6.2.pre'
+gem 'omniauth', '~> 1.9.1'
+gem 'omniauth-google-oauth2'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
