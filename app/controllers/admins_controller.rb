@@ -25,4 +25,5 @@ class AdminsController < ActionController::Base
     u = User.find(params[:id])
     u.unset_admin
   end
+end
 

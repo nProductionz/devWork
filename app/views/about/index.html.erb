@@ -1,0 +1,32 @@
+<p>
+  <div>
+     <h4> Cerca per Genere</h4>
+    <ul>
+        <li><%= link_to "Western", about_index_path(:genre=>"Western comics") %></li>
+        <li><%= link_to "Manga", about_index_path(:genre=>"Manga") %></li>
+        <li><%= link_to "Paint", about_index_path(:genre=>"Paint") %></li>
+        <li><%= link_to "Digital", about_index_path(:genre=>"Digital comic") %></li>
+    </ul>
+  </div>
+</p>
+<br>
+<p>
+  <div>
+    <h1><%= @page.title %></h1>
+    <br>
+    <%= @page.summary %>
+    </div>
+    <br>
+    <div style='width=640px, height = 480px'>
+      <img src="<%=@page.main_image_url %>" style='height: 50%; width: 50%; object-fit: contain'/>
+    </div>
+</p>
+<br>
+<p>
+  <%= link_to 'Diventa un\'Artista', new_artist_path %>
+  <br>
+  <%= link_to 'Elenco Requests', requests_path %>
+  <br>
+</p>
+<p><br></p>
+<br>

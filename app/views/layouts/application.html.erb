@@ -8,6 +8,8 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('logo_size.ico') %>
+
   </head>
 
   <body>
@@ -28,4 +30,6 @@
     <% if current_user.is_admin? %>
       <%= link_to "Admin", admin_view_path %>
     <% end %>
+  <%end%>
+  
 </html>

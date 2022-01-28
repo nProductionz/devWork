@@ -1,4 +1,5 @@
 class RequestsController < ApplicationController
+  require 'wikipedia'
 
   before_action :set_request, only: %i[ show edit update destroy ]
   before_action :require_permission, only: :edit
@@ -81,7 +82,9 @@ class RequestsController < ApplicationController
     end
   
     def set_request
-      @request = Request.find(params[:id])
+      if[:id] != "about"
+        @request = Request.find(params[:id])
+      end
     end
 
     # Only allow a list of trusted parameters through.
