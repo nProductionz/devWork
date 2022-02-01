@@ -7,7 +7,8 @@ Rails.application.routes.draw do
   get 'about/index'
     
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }  
-  resources :users
+  
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "requests#index"
   
@@ -21,8 +22,6 @@ Rails.application.routes.draw do
     resource :reviews, only: [:new, :create, :destroy]
   end
   
-  post '/logout' => 'sessions#destroy'
-
   get 'adm', to: 'admins#index', :as => :admin_view
   get 'adm/ban/:id', to: 'admins#unartist_user', :via => :get, :as => :admin_unartist_user
   get 'adm/unban/:id', to: 'admins#makeartist_user', :via => :get, :as => :admin_makeartist_user

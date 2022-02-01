@@ -59,10 +59,12 @@ group :test do
   gem 'webdrivers'
   gem 'rexml'
   
-
   gem 'database_cleaner'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'cucumber-rails-training-wheels'
   gem 'rspec-rails'
+  gem 'rails-controller-testing'
+  gem 'launchy'
 end
 
 gem 'wikipedia-client'

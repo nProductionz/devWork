@@ -5,7 +5,6 @@ one:
   genre: Digital
   tag1: Traditional
   tag2: Action
-  user_id: User.current
+  user_id: 1
   reference: http://motherfuckingwebsite.com
   description: A good example of how a site should be
-
