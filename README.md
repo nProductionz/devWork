@@ -1,11 +1,12 @@
-# README
+# DevWork
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Introduzione ##
 
-Things you may want to cover:
+DevWork è un progetto realizzato per il corso di Lab. ASSI (Ing. Informatica e Automatica, anno 2020/21), e si pone come obbiettivo la creazione di una pagina ove diversi utenti possano postare delle commissioni; una serie di utenti speciali, definiti come "Artist", potrà poi avanzare delle proposte per le singole commissioni.
 
-* Ruby version
+### Users ###
+
+Gli User "base" sono utenti le cui uniche possibilità 
 
 * System dependencies
 
